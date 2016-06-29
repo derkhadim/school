@@ -14,7 +14,6 @@ class StudentsController < ApplicationController
   end
 
   def create
-    authorize! :create, @student
   	@student = Student.new(student_params)
   	if @student.save
   		redirect_to students_path, notice: 'Votre inscription a été bien prise en compte'
