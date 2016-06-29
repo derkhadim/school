@@ -12,7 +12,7 @@ class Ability
       end
 
       if user.role_id == 4
-        can [:read, :update], Student
+        can [:create, :read, :update], Student
       end
     #
     # The first argument to `can` is the action you are giving the user 
