@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Date de Naissance</th>
+      <th>Status</th>
+      <th colspan="3"> Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |s| %>
+      <tr>
+        <td><%= s.first_name %></td>
+        <td><%= s.last_name %></td>
+        <td><%= s.birth_day %></td>
+        <td><%= s.status %></td>
+        <td><%= link_to 'Show', s %></td>
+        <td><%= link_to 'Edit', edit_student_path(s) %></td>
+        <td><%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Laclass', new_student_path %>
