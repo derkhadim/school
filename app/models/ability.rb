@@ -7,9 +7,12 @@ class Ability
     #   user ||= User.new # guest user (not logged in)
       if user.role_id == 1
         can :manage, :all
-        can :create, Laclasse
       else
         can :read, Laclasse
+      end
+
+      if user.role_id == 4
+        can [:read, :update], Student
       end
     #
     # The first argument to `can` is the action you are giving the user 

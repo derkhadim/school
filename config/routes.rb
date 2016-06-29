@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'preinscription/index'
+
   resources :laclasses
   resources :students
   devise_for :users

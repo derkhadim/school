@@ -45,7 +45,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">School</a>
+        <a class="navbar-brand" href="<%= root_path %>">School</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav pull-right">
             <% if user_signed_in? %>
@@ -73,7 +73,7 @@
               <ul class="nav nav-list">
                 <li><%= link_to "Gestion des Class", laclasses_path  %></li>
                 <li><%= link_to "Gestion des élèves", "/path2"  %></li>
-                <li><%= link_to "Gestion des préinscriptions", "/path3"  %></li>
+                <li><%= link_to "Gestion des préinscriptions", preinscription_index_path  %></li>
               </ul>
             </div><!--/.well -->
           <% end %>
@@ -82,7 +82,7 @@
               <h3>Bare de suivi</h3>
               <ul class="nav nav-list">
                 <li><%= link_to "Inscrire un élève", new_student_path  %></li>
-                <li><%= link_to "Mes élèves", "/path2"  %></li>
+                <li><%= link_to "Mes élèves", students_path  %></li>
                 <li><%= link_to "Voir les notes", "/path2"  %></li>
               </ul>
             </div><!--/.well -->

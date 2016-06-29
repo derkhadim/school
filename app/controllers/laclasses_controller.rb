@@ -11,6 +11,7 @@ class LaclassesController < ApplicationController
   # GET /laclasses/1
   # GET /laclasses/1.json
   def show
+    @students = Student.all.where(laclasse_id: @laclass.id, status: "Oui")
   end
 
   # GET /laclasses/new
@@ -59,8 +60,8 @@ class LaclassesController < ApplicationController
   # DELETE /laclasses/1
   # DELETE /laclasses/1.json
   def destroy
-    @laclass.destroy
     authorize! :destroy, @laclass
+    @laclass.destroy
     respond_to do |format|
       format.html { redirect_to laclasses_url, notice: 'Laclasse was successfully destroyed.' }
       format.json { head :no_content }
@@ -75,6 +76,6 @@ class LaclassesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def laclass_params
-      params.require(:laclasse).permit(:name, :student_id)
+      params.require(:laclasse).permit(:name)
     end
 end

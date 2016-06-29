@@ -1,6 +1,11 @@
 <%= simple_form_for @student, html: { class: 'form-horizontal' } do |f| %>
+
 	<%= f.input :first_name, label: 'Prénom', input_html: { class: 'form-control'} %>
 	<%= f.input :last_name, label: 'Nom', input_html: { class: 'form-control'} %>
 	<%= f.input :birth_day, as: :date, label: 'Date de naissance', input_html: { class: 'form-control'} %>
+	<%= f.association :laclasse, :collection => Laclasse.all, :value_method => :id, input_html: { class: 'form-control'} %>
+	<% if current_user.role_id == 1 %>
+		<%= f.input :status, priority: ["Non"], collection: ["Non", "Oui"] %>
+	<% end %>
 	<%= f.button :submit, "Valider", class: 'btn btn-primary' %>
 <% end %>
