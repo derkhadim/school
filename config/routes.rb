@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :matieres
   get 'preinscription/index'
+  get 'matieres/notes'
 
   resources :laclasses
   resources :students

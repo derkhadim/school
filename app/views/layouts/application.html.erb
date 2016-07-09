@@ -72,7 +72,7 @@
               <h3>Sidebar</h3>
               <ul class="nav nav-list">
                 <li><%= link_to "Gestion des Class", laclasses_path  %></li>
-                <li><%= link_to "Gestion des élèves", "/path2"  %></li>
+                <li><%= link_to "Gestion des notes", matieres_path  %></li>
                 <li><%= link_to "Gestion des préinscriptions", preinscription_index_path  %></li>
               </ul>
             </div><!--/.well -->
@@ -83,7 +83,7 @@
               <ul class="nav nav-list">
                 <li><%= link_to "Inscrire un élève", new_student_path  %></li>
                 <li><%= link_to "Mes élèves", students_path  %></li>
-                <li><%= link_to "Voir les notes", "/path2"  %></li>
+                <li><%= link_to "Voir les notes", matieres_path  %></li>
               </ul>
             </div><!--/.well -->
           <% end %>

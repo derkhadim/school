@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Notes</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Prénom & Nom</th>
+      <th>Maths</th>
+      <th>Pc</th>
+      <th>Svt</th>
+      <th>Anglais</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matieres.each do |matiere| %>
+      <tr>
+        <td><%= matiere.student.first_name + " " + matiere.student.last_name %></td>
+        <td><%= matiere.maths %></td>
+        <td><%= matiere.pc %></td>
+        <td><%= matiere.svt %></td>
+        <td><%= matiere.anglais %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

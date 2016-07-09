@@ -1,0 +1,4 @@
+<h2><%= @student.first_name.capitalize + " " + @student.last_name.upcase %></h2>
+<p>Eleve de classe <%= @student.laclasse_id %></p>
+<p>Né le <%= @student.birth_day %></p>
+<%= link_to "Ajouter une note", new_matiere_path, class: 'btn btn-primary'  %>

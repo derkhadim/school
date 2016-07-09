@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Maths:</strong>
+  <%= @matiere.maths %>
+</p>
+
+<p>
+  <strong>Pc:</strong>
+  <%= @matiere.pc %>
+</p>
+
+<p>
+  <strong>Svt:</strong>
+  <%= @matiere.svt %>
+</p>
+
+<p>
+  <strong>Anglais:</strong>
+  <%= @matiere.anglais %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @matiere.student.first_name + " " + @matiere.student.last_name %>
+</p>
+
+<%= link_to 'Edit', edit_matiere_path(@matiere) %> |
+<%= link_to 'Back', matieres_path %>

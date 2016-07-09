@@ -1,0 +1,15 @@
+<%= simple_form_for(@matiere) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :maths %>
+    <%= f.input :pc %>
+    <%= f.input :svt %>
+    <%= f.input :anglais %>
+    <%= f.association :student, :collection => Student.all, :method_value => :id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

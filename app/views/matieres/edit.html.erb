@@ -1,0 +1,5 @@
+<h1>Modifier les notes de <%= @matiere.student.first_name + " " + @matiere.student.last_name %></h1>
+<%= render 'form', matiere: @matiere %>
+
+<%= link_to 'Show', @matiere %> |
+<%= link_to 'Back', matieres_path %>

@@ -8,7 +8,7 @@
       <th>Date de Naissance</th>
       <th>Classe</th>
       <th>Status</th>
-      <th colspan="2"> Actions</th>
+      <th colspan="3"> Actions</th>
     </tr>
   </thead>
 
@@ -20,8 +20,9 @@
         <td><%= s.birth_day %></td>
         <td><%= s.laclasse.name %></td>
         <td><%= s.status %></td>
-        <td><%= link_to 'Edit', edit_student_path(s) %></td>
-        <td><%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Détails', s %></td>
+        <td><%= link_to 'Modifier', edit_student_path(s) %></td>
+        <td><%= link_to 'Supprimer', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

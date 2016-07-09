@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629173815) do
+ActiveRecord::Schema.define(version: 20160709114024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,26 @@ ActiveRecord::Schema.define(version: 20160629173815) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "matieres", force: :cascade do |t|
+    t.integer  "maths"
+    t.integer  "pc"
+    t.integer  "svt"
+    t.integer  "anglais"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_matieres_on_student_id", using: :btree
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.string   "matiere"
+    t.integer  "note"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "index_notes_on_student_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|
@@ -57,6 +77,8 @@ ActiveRecord::Schema.define(version: 20160629173815) do
     t.index ["role_id"], name: "index_users_on_role_id", using: :btree
   end
 
+  add_foreign_key "matieres", "students"
+  add_foreign_key "notes", "students"
   add_foreign_key "students", "laclasses", column: "laclasse_id"
   add_foreign_key "users", "roles"
 end

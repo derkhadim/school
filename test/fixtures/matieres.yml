@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  maths: 1
+  pc: 1
+  svt: 1
+  anglais: 1
+  student: one
+
+two:
+  maths: 1
+  pc: 1
+  svt: 1
+  anglais: 1
+  student: two

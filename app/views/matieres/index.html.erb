@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Matieres</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Prénom & Nom</th>
+      <th>Maths</th>
+      <th>Pc</th>
+      <th>Svt</th>
+      <th>Anglais</th>
+      <% if current_user.role_id == 1 %>
+        <th colspan="3"></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matieres.each do |matiere| %>
+      <tr>
+        <td><%= matiere.student.first_name + " " + matiere.student.last_name %></td>
+        <td><%= matiere.maths %></td>
+        <td><%= matiere.pc %></td>
+        <td><%= matiere.svt %></td>
+        <td><%= matiere.anglais %></td>
+        <% if current_user.role_id == 1 %>
+          <td><%= link_to 'Show', matiere %></td>
+          <td><%= link_to 'Edit', edit_matiere_path(matiere) %></td>
+          <td><%= link_to 'Destroy', matiere, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user.role_id == 1 %>
+  <%= link_to 'Ajouter une note', new_matiere_path, class: 'btn btn-warning' %>
+<% end %>
