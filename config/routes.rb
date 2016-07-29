@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'matieres/notes'
 
   resources :laclasses
-  resources :students
+  resources :students do
+  	collection do
+  		get 'search'
+  	end
+	end
   devise_for :users
   root 'home#index'
 

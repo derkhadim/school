@@ -20,6 +20,7 @@ gem "devise"
 gem "simple_form"
 gem 'devise_roles'
 gem 'cancan', '~> 1.6', '>= 1.6.10'
+gem 'search_cop'
 
 
 group :development, :test do

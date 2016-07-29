@@ -9,6 +9,10 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def search
+    @students = Student.search_student(params[:q])
+  end
+
   def new
   	@student = Student.new
   end
